@@ -440,3 +440,6 @@ The Android Ransomware Early Warning System demonstrates a laboratory-based appr
 By combining controlled workload simulations, file activity analysis, sliding-window detection, and process response, the project provides a foundation for studying ransomware-like behavior on Android.
 
 Further testing and improvements are required to validate detection accuracy, response speed, and reliability across different workload patterns.
+
+### Images
+<img width="865" height="935" alt="image" src="https://github.com/user-attachments/assets/3bb8d550-10ef-4c25-b71d-a75e0e097a4d" />
