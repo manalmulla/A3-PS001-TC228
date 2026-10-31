@@ -1,27 +1,22 @@
-#!/system/bin/sh
 
-TARGET="/sdcard/ranslab"
+$lines = @(
+'#!/system/bin/sh'
+'TARGET=/sdcard/ranslab'
+'for file in "$TARGET"/file_*.txt'
+'do'
+'    [ -f "$file" ] || continue'
+'    encrypted="$file.encrypted"'
+'    echo "SIMULATED ENCRYPTED DATA" > "$encrypted"'
+'    rm "$file"'
+'    sleep 0.1'
+'done'
+'echo "Copy-delete simulation completed."'
+)
 
-for file in "$TARGET"/file_*.txt
-do
+$content = ($lines -join "`n") + "`n"
 
-    encrypted="$file.encrypted"
-
-    echo "SIMULATED RANDOM ENCRYPTED DATA" > "$encrypted"
-
-    rm "$file"
-
-done#!/system/bin/sh
-
-TARGET="/sdcard/ranslab"
-
-for file in "$TARGET"/file_*.txt
-do
-
-    encrypted="$file.encrypted"
-
-    echo "SIMULATED RANDOM ENCRYPTED DATA" > "$encrypted"
-
-    rm "$file"
-
-done
+[System.IO.File]::WriteAllText(
+    "$PWD\workloads\attack_copy_delete.sh",
+    $content,
+    [System.Text.UTF8Encoding]::new($false)
+)

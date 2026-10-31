@@ -1,10 +1,24 @@
 
-# Generated dummy files
-test_files/
-
-# Python cache
+# Python cache files
 __pycache__/
-*.pyc
+*.py[cod]
 
-# Local environment files
-.env
+# Python virtual environments
+venv/
+.env/
+
+# Temporary files
+*.tmp
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+
+# Generated experiment output
+data/temp/
